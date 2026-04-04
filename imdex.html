@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My first web page</title>
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Pooja pic</h1>
+    <img src="images/Pooja Profile Photo.jpeg" alt="Pooja's profile pic" />
+    <p> This is Pooja's first page, she is studying hard, to beacome a fullstack Dev who is highly valued</p>
+    <ul>
+        <li>master web Dev</li>
+        <li>Master backend dev</li>
+        <li>master AI/ML part</li>
+        <li>master how systems work</li>
+    </ul>
+    <p> The <a href="https://www.pooja.com/goals">bigger goal</a> is to become a highly knowledgeable Architect...
+        An End goal would be to make a happy family life for my family, to make any house home for them
+        Also want to focus on my dreams of travelling in a First class & stay a five star hotels without worring about
+        bills..
+
+    </p>
+    <form action="/my-handling-form-page" method="post">
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+        </p>
+        <p>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" />
+        </p>
+        <p>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message"></textarea>
+        </p>
+        <p class="button">
+            <button type="submit">Send your message</button>
+        </p>
+    </form>
+
+    <!-- New todo list section -->
+    <h2>Todo List</h2>
+    <input type="text" id="todo-input" placeholder="Add a new todo item" />
+    <button onclick="addTodo()">Add Todo</button>
+    <ul id="todo-list"></ul>
+
+    <!-- New script for todo functionality -->
+    <script>
+        function addTodo() {
+            const input = document.getElementById('todo-input');
+            const list = document.getElementById('todo-list');
+            if (input.value.trim() !== '') {
+                const li = document.createElement('li');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.onclick = function() {
+                    li.style.textDecoration = this.checked ? 'line-through' : 'none';
+                };
+                li.appendChild(checkbox);
+                li.appendChild(document.createTextNode(' ' + input.value));
+                list.appendChild(li);
+                input.value = '';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
